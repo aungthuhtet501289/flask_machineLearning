@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/all.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+</head>
+<body>
+  
+  <div style="width: 400px; height: 500px; background-color: aquamarine; padding: 20px; margin-left: 500px; margin-top: 30px;">
+    <h3> Iris Classification</h3>
+    <div class="modal-body">
+      <form action="{{url_for('predict')}}" method="POST">
+        <div class="mb-3">
+          <label for="" class="col-form-label">Sepal.length:</label>
+          <input type="text" class="form-control" name="Sepallength" required>
+        </div>
+        <div class="mb-3">
+          <label for="" class="col-form-label">Sepal.width:</label>
+          <input type="text" class="form-control" name="Sepalwidth" required>
+        </div>
+        <div class="mb-3">
+          <label for="" class="col-form-label">Petal.length:</label>
+          <input type="text" class="form-control" name="Petallength" required>
+        </div>
+        <div class="mb-3">
+          <label for="" class="col-form-label">Petal.width:</label>
+          <input type="text" class="form-control" name="Petalwidth" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Predict</button>
+      </form>
+    </div>
+    <h4>Species: {{result}}</h4>
+  </div>
+      <script src="{{url_for('static', filename='js/all.js')}}"></script>
+      <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</body>
+</html>
