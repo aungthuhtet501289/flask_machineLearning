@@ -17,6 +17,7 @@ def predict():
         petalwidth=float(request.form['Petalwidth'])
         pred=model.predict([[sepalLength,sepalWidth,petallength,petalwidth]])
         return render_template('index.html',result=pred[0])
+    return render_template('index.html')
 
 if __name__=='__main__':
     app.run(debug=True)
